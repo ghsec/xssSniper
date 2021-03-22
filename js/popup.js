@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
             xhr.send();
         }
 
-    httpRequest('http://187ab829fe11.ngrok.io/knoxss.txt', function(payload){
+    httpRequest('http://yourserver/payloads.txt', function(payload){
         try {
             //xss_payload = eval('('+payload+')');
             var list = document.getElementById("plist").value+"\n"+(eval("("+payload+")").payload).join("\n");
