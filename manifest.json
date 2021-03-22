@@ -1,0 +1,45 @@
+{
+  "manifest_version":2,
+  "name": "XssSniper",  
+  "version": "1.1.33",  
+  "description": "Find XSS and SOME",  
+  "content_scripts": [
+    {
+  "all_frames": true,
+	            "matches": [
+                "http://*/*",
+                "https://*/*",
+                "file://*/*"
+            ],
+	"js": ["js/insert.js"],
+
+  "run_at": "document_start"
+   }  
+  ],
+  "background": {
+      "scripts": [ "js/background.js" ],
+      "persistent":true
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*/",
+    "tabs",
+    "notifications"
+  ],
+  "browser_action": {
+    "default_icon": {
+     "19": "img/init_19.png",
+     "38": "img/init_38.png"
+  },
+  "default_popup": "popup.html",
+  "default_title": "Open the pannel."
+  },
+ "icons": {
+    "128": "img/logo_128.png",
+    "16": "img/error_16.png",
+    "48": "img/logo_48.png"
+ },
+ "incognito": "spanning",
+ "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

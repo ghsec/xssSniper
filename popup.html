@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/popup.js"></script>
+    <title>XSS Tester</title>
+</head>
+<style>
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.cl {
+    clear: both;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+
+.ml5 {
+    margin-left: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn-xs {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.btn-info {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.form-control {
+    display: block;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+</style>
+
+<body style="width:270px; height:395px;">
+    <div class="options" id="optionsBlock" style="padding:5px;">
+        <p class="ml5" style="font-family:微软雅黑" id = "t1">目标列表</p>
+        <textarea rows="5" cols="30" id="wlist" value="" style="float:left" class="form-control" /></textarea>
+        <div style="width:200px;float:left" class="ml5" id="mainbody">
+            <input type="button" id="save_wlist" class="btn btn-xs mt5 btn-info" value="保存检测目标" />
+            <input type="button" id="save_towlist" class="btn btn-xs mt5 btn-success" value="将当前网址加入白名单" />
+            <br>
+            <p class="ml5" style="font-family:微软雅黑" id = "t2">Payload列表</p>
+            <textarea rows="5" cols="30" id="plist" value="" style="float:left" class="form-control" /></textarea>
+            <input type="button" id="save_plist" class="btn btn-xs mt5 btn-success" value="保存自定义payload列表" />
+            <input type="hidden" id="return" class="btn btn-xs mt5" value="不保存返回" />
+            <input type="button" id="update_payload" class="btn btn-xs mt5" value="更新payload" />
+            <input type="button" id="switch" class="btn btn-xs mt5" value="开/关Fuzz" />
+			<br>
+			<a href="http://0kee.360.cn/domXss/" style="font-family:微软雅黑" target = "about_blank" id="help">帮助</a>
+        </div>
+        <div class="cl"></div>
+    </div>
+</body>
+
+</html>
